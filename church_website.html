@@ -1,0 +1,2532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDA Likoni Main Church — Where Faith Meets Community</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --midnight: #0D1B2A;
+  --navy: #1B2D45;
+  --navy-light: #243A56;
+  --gold: #C9A84C;
+  --gold-light: #E8C97D;
+  --gold-pale: #F5E6C0;
+  --ivory: #FAF7F2;
+  --cream: #F0EAE0;
+  --text: #1A1A2E;
+  --muted: #6B7A8D;
+  --white: #FFFFFF;
+  --shadow: 0 8px 40px rgba(13,27,42,0.15);
+  --shadow-lg: 0 20px 80px rgba(13,27,42,0.25);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--ivory);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--midnight); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ===== NAV ===== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+  height: 72px;
+  background: rgba(13,27,42,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  transition: all 0.3s ease;
+}
+
+.nav-logo {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+}
+.nav-logo-cross {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+}
+.nav-logo-cross svg { width: 100%; height: 100%; }
+.nav-logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+.nav-logo-text span { color: var(--gold); display: block; font-size: 0.7rem; font-family: 'DM Sans', sans-serif; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
+
+.nav-links {
+  display: flex; align-items: center; gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: var(--gold);
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--gold-light); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  background: var(--gold);
+  color: var(--midnight) !important;
+  padding: 9px 20px;
+  border-radius: 4px;
+  font-weight: 600 !important;
+  transition: background 0.2s, transform 0.2s !important;
+}
+.nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+.nav-cta::after { display: none !important; }
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column; gap: 5px; cursor: pointer; padding: 4px;
+}
+.nav-hamburger span {
+  width: 24px; height: 2px; background: var(--white);
+  border-radius: 2px; transition: all 0.3s;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  background: var(--midnight);
+  position: relative;
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background: 
+    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(201,168,76,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 10% 80%, rgba(27,45,69,0.8) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 1;
+}
+
+.hero-particles {
+  position: absolute; inset: 0; overflow: hidden;
+}
+.particle {
+  position: absolute;
+  width: 2px; height: 2px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0;
+  animation: float-particle linear infinite;
+}
+
+@keyframes float-particle {
+  0% { opacity: 0; transform: translateY(100vh) scale(0); }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.2; }
+  100% { opacity: 0; transform: translateY(-100px) scale(1.5); }
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 120px 48px 80px;
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: center; width: 100%;
+}
+
+.hero-left {}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-light);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 28px;
+  animation: fade-up 0.8s ease both;
+}
+.hero-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 24px;
+  animation: fade-up 0.8s 0.1s ease both;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-light);
+  display: block;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin-bottom: 44px;
+  max-width: 480px;
+  animation: fade-up 0.8s 0.2s ease both;
+}
+
+.hero-actions {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  animation: fade-up 0.8s 0.3s ease both;
+}
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--midnight);
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.3);
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+.btn-ghost {
+  background: rgba(201,168,76,0.1);
+  color: var(--gold-light);
+  border: 1px solid rgba(201,168,76,0.2);
+}
+.btn-ghost:hover { background: rgba(201,168,76,0.2); transform: translateY(-2px); }
+
+.btn-icon {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem;
+}
+
+.hero-right {
+  display: flex; flex-direction: column; gap: 20px;
+  animation: fade-up 0.8s 0.4s ease both;
+}
+
+.hero-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+}
+.hero-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(201,168,76,0.2); transform: translateX(4px); }
+
+.verse-card { border-color: rgba(201,168,76,0.2); background: rgba(201,168,76,0.05); }
+.verse-card .verse-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--gold-light);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.verse-card .verse-ref {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.live-card {
+  display: flex; align-items: center; gap: 16px;
+}
+.live-indicator {
+  width: 48px; height: 48px;
+  background: rgba(220,50,50,0.15);
+  border: 1.5px solid rgba(220,50,50,0.4);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.live-indicator::after {
+  content: '';
+  position: absolute; inset: -4px;
+  border: 1px solid rgba(220,50,50,0.2);
+  border-radius: 50%;
+  animation: live-pulse 2s ease infinite;
+}
+@keyframes live-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0; }
+}
+.live-dot { width: 12px; height: 12px; background: #E53E3E; border-radius: 50%; }
+.live-info h4 { color: var(--white); font-size: 0.95rem; font-weight: 600; margin-bottom: 2px; }
+.live-info p { color: rgba(255,255,255,0.5); font-size: 0.8rem; }
+
+.next-event-card h4 { color: rgba(255,255,255,0.5); font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+.event-countdown {
+  display: flex; gap: 12px;
+}
+.countdown-unit {
+  text-align: center;
+}
+.countdown-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  display: block;
+}
+.countdown-label {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.countdown-sep {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: var(--gold);
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+/* ===== SECTION COMMON ===== */
+.section { padding: 100px 48px; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-label::before {
+  content: '';
+  width: 32px; height: 1px;
+  background: var(--gold);
+  display: inline-block;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: var(--midnight);
+}
+
+.section-subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== QUICK LINKS BAR ===== */
+.quick-links-bar {
+  background: var(--navy);
+  padding: 0 48px;
+}
+.quick-links-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; overflow-x: auto;
+}
+.quick-link {
+  flex: 1; min-width: 160px;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 24px 20px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  text-decoration: none;
+  color: rgba(255,255,255,0.6);
+  transition: all 0.3s;
+  gap: 8px;
+}
+.quick-link:hover { background: rgba(201,168,76,0.06); color: var(--gold-light); }
+.quick-link-icon {
+  font-size: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px;
+  background: rgba(201,168,76,0.08);
+  border-radius: 12px;
+  transition: background 0.3s;
+}
+.quick-link:hover .quick-link-icon { background: rgba(201,168,76,0.15); }
+.quick-link span { font-size: 0.82rem; font-weight: 500; }
+
+/* ===== ABOUT ===== */
+.about-section { background: var(--ivory); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: center;
+}
+.about-visual {
+  position: relative;
+}
+.about-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 500px;
+  background: var(--navy);
+}
+.about-image-placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--midnight) 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.about-image-placeholder::before {
+  content: '✝';
+  font-size: 8rem;
+  color: rgba(201,168,76,0.15);
+  position: absolute;
+}
+.about-image-placeholder svg {
+  width: 120px; height: 120px;
+  opacity: 0.25;
+}
+.about-stats {
+  position: absolute; right: -30px; bottom: 40px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.about-stat-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+  min-width: 140px;
+}
+.about-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+}
+.about-stat-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.about-text {}
+.values-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  margin-top: 36px;
+}
+.value-card {
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 20px;
+  border-left: 3px solid var(--gold);
+  transition: all 0.3s;
+}
+.value-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.value-icon { font-size: 1.4rem; margin-bottom: 8px; }
+.value-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; color: var(--navy); }
+.value-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+/* ===== TIMELINE ===== */
+.timeline-section { background: var(--midnight); padding: 80px 48px; overflow-x: auto; }
+.timeline-section .section-title { color: var(--white); }
+.timeline-section .section-subtitle { color: rgba(255,255,255,0.5); }
+.timeline {
+  display: flex; gap: 0;
+  margin-top: 60px;
+  position: relative;
+  padding-bottom: 20px;
+  min-width: 800px;
+}
+.timeline::before {
+  content: '';
+  position: absolute; top: 36px; left: 0; right: 0;
+  height: 2px; background: linear-gradient(to right, var(--gold), rgba(201,168,76,0.2));
+}
+.timeline-item {
+  flex: 1; position: relative; padding-top: 80px; padding-right: 20px;
+  transition: all 0.3s;
+}
+.timeline-item:hover .timeline-year { color: var(--gold-light); }
+.timeline-dot {
+  position: absolute; top: 28px; left: 0;
+  width: 18px; height: 18px;
+  background: var(--gold);
+  border-radius: 50%;
+  border: 3px solid var(--midnight);
+  box-shadow: 0 0 0 2px var(--gold);
+}
+.timeline-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+.timeline-title { color: var(--white); font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; }
+.timeline-desc { color: rgba(255,255,255,0.45); font-size: 0.82rem; line-height: 1.5; }
+
+/* ===== SERMONS ===== */
+.sermons-section { background: var(--ivory); }
+.sermon-filters {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin: 32px 0 40px;
+}
+.filter-btn {
+  padding: 8px 18px;
+  border-radius: 100px;
+  border: 1.5px solid var(--cream);
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.83rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+.sermon-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+}
+.sermon-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(13,27,42,0.07);
+  transition: all 0.35s;
+  cursor: pointer;
+}
+.sermon-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.sermon-thumbnail {
+  height: 180px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--midnight) 100%);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.sermon-thumbnail-icon {
+  font-size: 3rem;
+  opacity: 0.3;
+}
+.sermon-duration {
+  position: absolute; bottom: 12px; right: 12px;
+  background: rgba(0,0,0,0.6);
+  color: var(--white); font-size: 0.72rem;
+  padding: 3px 8px; border-radius: 4px;
+}
+.sermon-play-btn {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; background: rgba(0,0,0,0.3);
+  transition: opacity 0.3s;
+}
+.sermon-card:hover .sermon-play-btn { opacity: 1; }
+.play-circle {
+  width: 56px; height: 56px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+}
+.sermon-body { padding: 20px; }
+.sermon-topic {
+  font-size: 0.72rem;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.sermon-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; line-height: 1.3; margin-bottom: 10px; color: var(--midnight); }
+.sermon-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: var(--muted); }
+.sermon-meta-left { display: flex; align-items: center; gap: 8px; }
+.speaker-avatar {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--navy); display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; color: var(--gold); font-weight: 600;
+}
+.sermon-downloads { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--cream); display: flex; gap: 8px; }
+.download-pill {
+  padding: 4px 12px; border-radius: 100px;
+  background: var(--cream); font-size: 0.73rem; color: var(--muted);
+  text-decoration: none; transition: all 0.2s;
+  display: flex; align-items: center; gap: 4px;
+}
+.download-pill:hover { background: var(--navy); color: var(--white); }
+
+/* ===== EVENTS ===== */
+.events-section { background: var(--navy); }
+.events-section .section-label { color: var(--gold-light); }
+.events-section .section-title { color: var(--white); }
+.events-section .section-subtitle { color: rgba(255,255,255,0.55); }
+
+.events-layout {
+  display: grid; grid-template-columns: 1fr 360px; gap: 48px;
+  margin-top: 48px;
+}
+
+.calendar-widget {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 28px;
+}
+.cal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 24px;
+}
+.cal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--white);
+}
+.cal-nav { display: flex; gap: 8px; }
+.cal-nav-btn {
+  width: 32px; height: 32px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem;
+}
+.cal-nav-btn:hover { background: rgba(201,168,76,0.15); border-color: rgba(201,168,76,0.3); }
+.cal-days-header {
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  gap: 4px; margin-bottom: 8px;
+}
+.cal-day-label {
+  text-align: center; font-size: 0.7rem;
+  color: rgba(255,255,255,0.35); font-weight: 600;
+  letter-spacing: 0.5px; text-transform: uppercase;
+  padding: 4px 0;
+}
+.cal-grid {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;
+}
+.cal-cell {
+  aspect-ratio: 1;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+.cal-cell:hover { background: rgba(255,255,255,0.06); color: var(--white); }
+.cal-cell.today {
+  background: var(--gold);
+  color: var(--midnight);
+  font-weight: 700;
+}
+.cal-cell.has-event::after {
+  content: '';
+  position: absolute; bottom: 4px;
+  width: 4px; height: 4px;
+  background: var(--gold-light);
+  border-radius: 50%;
+}
+.cal-cell.today.has-event::after { background: var(--midnight); }
+.cal-cell.other-month { opacity: 0.25; }
+
+.events-sidebar {}
+.event-filters {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px;
+}
+.event-filter-btn {
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.75rem; font-weight: 500;
+  cursor: pointer; transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.event-filter-btn.active, .event-filter-btn:hover {
+  background: rgba(201,168,76,0.15);
+  border-color: rgba(201,168,76,0.4);
+  color: var(--gold-light);
+}
+.event-list { display: flex; flex-direction: column; gap: 14px; }
+.event-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex; gap: 16px; align-items: flex-start;
+  transition: all 0.3s; cursor: pointer;
+}
+.event-item:hover { background: rgba(255,255,255,0.08); border-color: rgba(201,168,76,0.2); }
+.event-date-box {
+  flex-shrink: 0; text-align: center;
+  width: 48px;
+  background: rgba(201,168,76,0.1);
+  border-radius: 10px; padding: 8px 6px;
+}
+.event-date-day {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--gold); line-height: 1; display: block;
+}
+.event-date-month {
+  font-size: 0.65rem; color: rgba(255,255,255,0.4);
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.event-info h4 { color: var(--white); font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+.event-info p { color: rgba(255,255,255,0.45); font-size: 0.78rem; line-height: 1.4; }
+.event-tag {
+  display: inline-block; margin-top: 6px;
+  padding: 2px 10px; border-radius: 100px;
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.tag-youth { background: rgba(99,179,237,0.15); color: #63B3ED; }
+.tag-worship { background: rgba(154,205,50,0.15); color: #9ACD32; }
+.tag-outreach { background: rgba(237,137,54,0.15); color: #ED8936; }
+.tag-study { background: rgba(201,168,76,0.15); color: var(--gold-light); }
+.tag-special { background: rgba(237,100,166,0.15); color: #ED64A6; }
+
+/* ===== MINISTRIES ===== */
+.ministries-section { background: var(--ivory); }
+.ministry-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  margin-top: 48px;
+}
+.ministry-card {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+  cursor: pointer;
+  background: var(--navy);
+}
+.ministry-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, #1B2D45 0%, #0D1B2A 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 6rem;
+  opacity: 0.15;
+  transition: transform 0.5s ease;
+}
+.ministry-card:hover .ministry-bg { transform: scale(1.1); }
+.ministry-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(13,27,42,0.95) 0%, rgba(13,27,42,0.2) 60%, transparent 100%);
+  display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 28px;
+  transition: all 0.3s;
+}
+.ministry-icon { font-size: 2.2rem; margin-bottom: 10px; }
+.ministry-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.ministry-desc {
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.5;
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.ministry-card:hover .ministry-desc { max-height: 80px; }
+.ministry-members {
+  margin-top: 12px;
+  font-size: 0.75rem;
+  color: var(--gold);
+  display: flex; align-items: center; gap: 6px;
+}
+.ministry-join {
+  position: absolute; top: 20px; right: 20px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-light);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  opacity: 0; transform: translateY(-8px);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.ministry-card:hover .ministry-join { opacity: 1; transform: translateY(0); }
+
+/* ===== DONATIONS ===== */
+.donations-section { 
+  background: linear-gradient(135deg, var(--midnight) 0%, #162236 100%);
+  padding: 100px 48px;
+}
+.donations-section .section-label { color: var(--gold-light); }
+.donations-section .section-title { color: var(--white); }
+.donations-section .section-subtitle { color: rgba(255,255,255,0.5); }
+.donations-layout {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  align-items: start; margin-top: 48px;
+}
+.donation-form-wrapper {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 36px;
+}
+.donation-form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.amount-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  margin-bottom: 20px;
+}
+.amount-btn {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.amount-btn:hover, .amount-btn.selected {
+  background: rgba(201,168,76,0.12);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+.donation-input-group { margin-bottom: 16px; }
+.donation-input-group label {
+  display: block; font-size: 0.8rem;
+  color: rgba(255,255,255,0.5); margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+.donation-input {
+  width: 100%; padding: 13px 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  color: var(--white);
+  font-size: 0.95rem;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.donation-input:focus { border-color: rgba(201,168,76,0.5); }
+.donation-input::placeholder { color: rgba(255,255,255,0.25); }
+.recurring-toggle {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+}
+.toggle-switch {
+  width: 44px; height: 24px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px; position: relative;
+  cursor: pointer; transition: background 0.3s;
+  border: none;
+  flex-shrink: 0;
+}
+.toggle-switch.on { background: var(--gold); }
+.toggle-switch::after {
+  content: '';
+  position: absolute; left: 3px; top: 3px;
+  width: 18px; height: 18px;
+  background: var(--white); border-radius: 50%;
+  transition: left 0.3s;
+}
+.toggle-switch.on::after { left: 23px; }
+.toggle-label { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+.payment-methods {
+  display: flex; gap: 10px; margin-bottom: 24px;
+}
+.payment-method {
+  flex: 1; padding: 10px;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 10px; text-align: center;
+  cursor: pointer; transition: all 0.2s;
+  color: rgba(255,255,255,0.5); font-size: 0.8rem;
+  font-weight: 500;
+}
+.payment-method:hover, .payment-method.selected {
+  border-color: rgba(201,168,76,0.4);
+  background: rgba(201,168,76,0.08);
+  color: var(--gold-light);
+}
+.impact-tracker { }
+.impact-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; color: var(--white);
+  margin-bottom: 28px;
+}
+.impact-item {
+  margin-bottom: 24px;
+}
+.impact-header {
+  display: flex; justify-content: space-between;
+  margin-bottom: 8px;
+}
+.impact-name { color: rgba(255,255,255,0.7); font-size: 0.88rem; }
+.impact-pct { color: var(--gold); font-weight: 600; font-size: 0.88rem; }
+.impact-bar-track {
+  height: 8px; background: rgba(255,255,255,0.08);
+  border-radius: 4px; overflow: hidden;
+}
+.impact-bar-fill {
+  height: 100%; background: linear-gradient(to right, var(--gold), var(--gold-light));
+  border-radius: 4px;
+  transition: width 1.5s ease;
+  width: 0;
+}
+.impact-goal {
+  font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-top: 4px;
+}
+.total-raised {
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 16px; padding: 24px;
+  margin-top: 32px; text-align: center;
+}
+.total-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem; font-weight: 700;
+  color: var(--gold); display: block;
+}
+.total-label { color: rgba(255,255,255,0.4); font-size: 0.82rem; margin-top: 4px; }
+
+/* ===== TESTIMONIALS ===== */
+.testimonials-section { background: var(--cream); padding: 100px 48px; overflow: hidden; }
+.testimonials-track {
+  display: flex; gap: 24px;
+  margin-top: 48px;
+  animation: scroll-testimonials 30s linear infinite;
+  width: max-content;
+}
+.testimonials-track:hover { animation-play-state: paused; }
+@keyframes scroll-testimonials {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.testimonial-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 32px;
+  width: 340px; flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(13,27,42,0.07);
+}
+.testimonial-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.testimonial-quote::before { content: '"'; color: var(--gold); font-size: 2rem; line-height: 0; vertical-align: -0.4em; }
+.testimonial-author {
+  display: flex; align-items: center; gap: 12px;
+}
+.author-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+.author-name { font-weight: 600; font-size: 0.9rem; color: var(--midnight); }
+.author-role { font-size: 0.75rem; color: var(--muted); }
+.stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 12px; }
+
+/* ===== BLOG ===== */
+.blog-section { background: var(--ivory); }
+.blog-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 24px;
+  margin-top: 48px;
+}
+.blog-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(13,27,42,0.06);
+  transition: all 0.35s; cursor: pointer;
+}
+.blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.blog-img {
+  height: 200px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--midnight) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem;
+  opacity: 0.7;
+  position: relative;
+  overflow: hidden;
+}
+.blog-card:first-child .blog-img { height: 260px; }
+.blog-body { padding: 24px; }
+.blog-category {
+  font-size: 0.7rem; color: var(--gold); font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;
+}
+.blog-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; font-weight: 600;
+  line-height: 1.3; color: var(--midnight); margin-bottom: 10px;
+}
+.blog-card:first-child .blog-title { font-size: 1.5rem; }
+.blog-excerpt {
+  font-size: 0.83rem; color: var(--muted); line-height: 1.6;
+  margin-bottom: 16px;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.blog-meta {
+  display: flex; justify-content: space-between;
+  font-size: 0.75rem; color: var(--muted);
+  border-top: 1px solid var(--cream); padding-top: 14px;
+}
+.blog-meta-left { display: flex; align-items: center; gap: 8px; }
+.read-more { color: var(--gold); font-weight: 600; text-decoration: none; }
+
+/* ===== LEADERSHIP ===== */
+.leadership-section { background: var(--cream); }
+.leaders-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  margin-top: 48px;
+}
+.leader-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.35s;
+  cursor: pointer;
+}
+.leader-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.leader-img {
+  height: 200px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--midnight) 100%);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.leader-initials {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 700;
+  color: var(--gold); opacity: 0.6;
+}
+.leader-hover-info {
+  position: absolute; inset: 0;
+  background: rgba(13,27,42,0.9);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.3s;
+  padding: 20px;
+}
+.leader-card:hover .leader-hover-info { opacity: 1; }
+.leader-bio {
+  font-size: 0.8rem; color: rgba(255,255,255,0.75);
+  line-height: 1.5; font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+}
+.leader-body { padding: 20px; }
+.leader-name { font-weight: 700; font-size: 1rem; color: var(--midnight); margin-bottom: 4px; }
+.leader-role { font-size: 0.78rem; color: var(--gold); font-weight: 600; }
+.leader-social { display: flex; gap: 8px; justify-content: center; margin-top: 12px; }
+.social-btn {
+  width: 32px; height: 32px;
+  border-radius: 8px; background: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; text-decoration: none; color: var(--muted);
+  transition: all 0.2s;
+}
+.social-btn:hover { background: var(--navy); color: var(--white); }
+
+/* ===== CONTACT ===== */
+.contact-section { background: var(--midnight); padding: 100px 48px; }
+.contact-section .section-label { color: var(--gold-light); }
+.contact-section .section-title { color: var(--white); }
+.contact-layout {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  margin-top: 48px;
+}
+.contact-info {}
+.contact-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  margin-bottom: 28px;
+}
+.contact-icon {
+  width: 48px; height: 48px;
+  background: rgba(201,168,76,0.1);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; flex-shrink: 0;
+}
+.contact-detail h4 { color: var(--white); font-weight: 600; margin-bottom: 4px; }
+.contact-detail p { color: rgba(255,255,255,0.5); font-size: 0.87rem; line-height: 1.5; }
+.social-links { display: flex; gap: 12px; margin-top: 36px; }
+.social-link {
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; color: rgba(255,255,255,0.5);
+  font-size: 1rem; transition: all 0.2s;
+}
+.social-link:hover { background: rgba(201,168,76,0.15); border-color: rgba(201,168,76,0.3); color: var(--gold-light); }
+
+.contact-form {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px; padding: 36px;
+}
+.form-group { margin-bottom: 18px; }
+.form-group label {
+  display: block; font-size: 0.8rem;
+  color: rgba(255,255,255,0.5); margin-bottom: 8px;
+}
+.form-input {
+  width: 100%; padding: 12px 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  color: var(--white); font-size: 0.9rem;
+  font-family: 'DM Sans', sans-serif; outline: none;
+  transition: border-color 0.2s;
+}
+.form-input:focus { border-color: rgba(201,168,76,0.4); background: rgba(255,255,255,0.07); }
+.form-input::placeholder { color: rgba(255,255,255,0.2); }
+textarea.form-input { resize: vertical; min-height: 120px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* ===== MAP PLACEHOLDER ===== */
+.map-placeholder {
+  height: 300px;
+  background: var(--navy);
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 40px;
+  position: relative; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.map-placeholder::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: 
+    repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(255,255,255,0.02) 30px, rgba(255,255,255,0.02) 31px),
+    repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(255,255,255,0.02) 30px, rgba(255,255,255,0.02) 31px);
+}
+.map-pin {
+  z-index: 1;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.map-pin-icon { font-size: 2rem; animation: bounce-pin 2s ease infinite; }
+@keyframes bounce-pin {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.map-pin-text { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+
+/* ===== NEWSLETTER ===== */
+.newsletter-section {
+  background: var(--gold);
+  padding: 60px 48px;
+}
+.newsletter-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 40px;
+}
+.newsletter-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem; font-weight: 700;
+  color: var(--midnight); margin-bottom: 6px;
+}
+.newsletter-text p { color: rgba(13,27,42,0.6); font-size: 0.95rem; }
+.newsletter-form {
+  display: flex; gap: 12px; flex-shrink: 0; max-width: 440px; width: 100%;
+}
+.newsletter-input {
+  flex: 1; padding: 13px 18px;
+  border: none; border-radius: 8px;
+  font-size: 0.9rem; font-family: 'DM Sans', sans-serif;
+  background: rgba(13,27,42,0.1); color: var(--midnight);
+  outline: none;
+}
+.newsletter-input::placeholder { color: rgba(13,27,42,0.4); }
+.btn-dark {
+  background: var(--midnight); color: var(--white);
+  padding: 13px 24px; border-radius: 8px;
+  border: none; cursor: pointer; font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; white-space: nowrap;
+  transition: all 0.2s;
+}
+.btn-dark:hover { background: var(--navy); transform: translateY(-1px); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: #080F18;
+  padding: 64px 48px 32px;
+}
+.footer-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.footer-brand {}
+.footer-logo {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 16px;
+}
+.footer-tagline { color: rgba(255,255,255,0.4); font-size: 0.85rem; line-height: 1.6; max-width: 260px; }
+.footer-col-title {
+  color: var(--white); font-weight: 600; font-size: 0.88rem;
+  margin-bottom: 16px; letter-spacing: 0.5px;
+}
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a {
+  color: rgba(255,255,255,0.4); text-decoration: none;
+  font-size: 0.83rem; transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--gold-light); }
+.footer-bottom {
+  max-width: 1200px; margin: 28px auto 0;
+  display: flex; justify-content: space-between; align-items: center;
+  color: rgba(255,255,255,0.25); font-size: 0.78rem;
+}
+.footer-bottom a { color: rgba(255,255,255,0.25); text-decoration: none; }
+.footer-bottom a:hover { color: var(--gold); }
+
+/* ===== TOAST ===== */
+.toast {
+  position: fixed; bottom: 28px; right: 28px;
+  background: var(--navy);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--white);
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 0.87rem;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(100px) scale(0.9);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  z-index: 9999;
+  max-width: 300px;
+}
+.toast.show { transform: translateY(0) scale(1); opacity: 1; }
+.toast-icon { margin-right: 8px; }
+
+/* ===== MODALS ===== */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(8,15,24,0.85);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal {
+  background: var(--navy);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 520px; width: 90%;
+  transform: translateY(24px) scale(0.97);
+  transition: all 0.3s;
+  position: relative;
+}
+.modal-overlay.open .modal { transform: translateY(0) scale(1); }
+.modal-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.08);
+  border: none; border-radius: 8px;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer; font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.modal-close:hover { background: rgba(255,255,255,0.15); color: var(--white); }
+.modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem; color: var(--white);
+  margin-bottom: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .about-grid, .donations-layout, .contact-layout { grid-template-columns: 1fr; }
+  .about-stats { position: static; flex-direction: row; margin-top: 20px; }
+  .about-image-wrapper { height: 300px; }
+  .sermon-grid, .ministry-grid { grid-template-columns: 1fr 1fr; }
+  .leaders-grid { grid-template-columns: 1fr 1fr; }
+  .events-layout { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr 1fr; }
+  .blog-grid > *:first-child { grid-column: span 2; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .section { padding: 70px 24px; }
+  .hero-content { padding: 100px 24px 60px; }
+  .sermon-grid, .ministry-grid, .leaders-grid { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .blog-grid > *:first-child { grid-column: span 1; }
+  .newsletter-inner { flex-direction: column; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .quick-links-bar { padding: 0 24px; }
+  .donations-section, .contact-section, .testimonials-section, .timeline-section, .newsletter-section { padding: 70px 24px; }
+  .form-row { grid-template-columns: 1fr; }
+  .amount-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 2.5rem; }
+  .hero-actions { flex-direction: column; }
+  .nav-cta { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-cross">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="4" width="6" height="28" rx="2" fill="#C9A84C"/>
+        <rect x="6" y="11" width="24" height="6" rx="2" fill="#C9A84C"/>
+      </svg>
+    </div>
+    <div class="nav-logo-text">
+      Grace Covenant
+      <span>Church · Established 1987</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#sermons">Sermons</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#ministries">Ministries</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#donate" class="nav-cta">Give Now</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">🕊️ &nbsp;Sunday Services — 8:00AM & 10:30AM</div>
+      <h1 class="hero-title">
+        A Place to<br>
+        <em>Belong, Grow</em><br>
+        & Serve
+      </h1>
+      <p class="hero-subtitle">Welcome to Grace Covenant — a vibrant community of faith in the heart of the city. Every person who walks through our doors matters. Come as you are.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary" onclick="showToast('🎥 Connecting to live stream...'); return false;">
+          <span class="btn-icon">📡</span> Join Service Live
+        </a>
+        <a href="#events" class="btn btn-outline">Upcoming Events</a>
+        <a href="#donate" class="btn btn-ghost">Give Now</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card verse-card">
+        <div class="verse-text">"For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you."</div>
+        <div class="verse-ref">📖 Jeremiah 29:11 — Verse of the Week</div>
+      </div>
+      <div class="hero-card live-card">
+        <div class="live-indicator"><div class="live-dot"></div></div>
+        <div class="live-info">
+          <h4>Live Now: Sunday Worship</h4>
+          <p>Pastor David Mwangi · 2,341 watching</p>
+        </div>
+      </div>
+      <div class="hero-card next-event-card">
+        <h4>Next Event: Youth Retreat</h4>
+        <div class="event-countdown">
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-days">04</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-hours">14</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-mins">38</span>
+            <span class="countdown-label">Mins</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-secs">00</span>
+            <span class="countdown-label">Secs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK LINKS BAR -->
+<div class="quick-links-bar">
+  <div class="quick-links-inner">
+    <a href="#sermons" class="quick-link">
+      <div class="quick-link-icon">🎙️</div>
+      <span>Sermons</span>
+    </a>
+    <a href="#events" class="quick-link">
+      <div class="quick-link-icon">📅</div>
+      <span>Events</span>
+    </a>
+    <a href="#ministries" class="quick-link">
+      <div class="quick-link-icon">🙌</div>
+      <span>Ministries</span>
+    </a>
+    <a href="#donate" class="quick-link">
+      <div class="quick-link-icon">💛</div>
+      <span>Donate</span>
+    </a>
+    <a href="#" class="quick-link" onclick="showToast('📺 Opening prayer request form...'); return false;">
+      <div class="quick-link-icon">🙏</div>
+      <span>Prayer</span>
+    </a>
+    <a href="#" class="quick-link" onclick="showToast('📖 Opening Bible study portal...'); return false;">
+      <div class="quick-link-icon">📖</div>
+      <span>Bible Study</span>
+    </a>
+    <a href="#contact" class="quick-link">
+      <div class="quick-link-icon">📍</div>
+      <span>Find Us</span>
+    </a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section about-section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-image-wrapper">
+          <div class="about-image-placeholder">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="50" y="10" width="20" height="100" rx="6" fill="#C9A84C"/>
+              <rect x="15" y="35" width="90" height="20" rx="6" fill="#C9A84C"/>
+            </svg>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="about-stat-card">
+            <div class="about-stat-num">2,400+</div>
+            <div class="about-stat-label">Active Members</div>
+          </div>
+          <div class="about-stat-card">
+            <div class="about-stat-num">37</div>
+            <div class="about-stat-label">Years of Ministry</div>
+          </div>
+          <div class="about-stat-card">
+            <div class="about-stat-num">12</div>
+            <div class="about-stat-label">Ministries</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">Rooted in Faith,<br>Growing in Community</h2>
+        <p class="section-subtitle">Since 1987, Grace Covenant has been a beacon of hope, healing, and transformation. We believe the Church is not a building — it is a people called to love God and love others.</p>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">✝️</div>
+            <div class="value-title">Christ-Centered</div>
+            <div class="value-desc">Jesus is the foundation of everything we do and teach.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <div class="value-title">Community First</div>
+            <div class="value-desc">No one walks their faith journey alone. We carry each other.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🌍</div>
+            <div class="value-title">Kingdom Impact</div>
+            <div class="value-desc">Our mission extends beyond the walls of the church.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">📖</div>
+            <div class="value-title">Truth-Grounded</div>
+            <div class="value-desc">Scripture is our authority and compass in all matters.</div>
+          </div>
+        </div>
+        <div style="margin-top:32px;">
+          <a href="#" class="btn btn-primary" style="text-decoration:none;">Learn Our Story</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<div class="timeline-section reveal" style="overflow-x:auto;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-label">Our History</div>
+    <h2 class="section-title" style="color:var(--white);">Milestones of Grace</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">1987</div>
+        <div class="timeline-title">Founded</div>
+        <div class="timeline-desc">Grace Covenant established with 12 founding families in a rented hall.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">1995</div>
+        <div class="timeline-title">First Building</div>
+        <div class="timeline-desc">Moved into our first permanent church building on Mombasa Road.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2003</div>
+        <div class="timeline-title">Youth Ministry</div>
+        <div class="timeline-desc">Launched our award-winning youth programme impacting 300+ teens.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2010</div>
+        <div class="timeline-title">Expansion</div>
+        <div class="timeline-desc">Opened three satellite campuses across the county.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2018</div>
+        <div class="timeline-title">Online Ministry</div>
+        <div class="timeline-desc">Launched live streaming — now reaching 40+ countries weekly.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2024</div>
+        <div class="timeline-title">Today</div>
+        <div class="timeline-desc">2,400 members strong and growing in faith, love, and impact.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERMONS -->
+<section class="section sermons-section" id="sermons">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Sermons & Media</div>
+      <h2 class="section-title">Words That Transform</h2>
+      <p class="section-subtitle">Browse our full library of messages. Every sermon is designed to meet you where you are and take you where God is calling you.</p>
+    </div>
+    <div class="sermon-filters">
+      <button class="filter-btn active" onclick="filterSermons(this, 'all')">All Sermons</button>
+      <button class="filter-btn" onclick="filterSermons(this, 'faith')">Faith</button>
+      <button class="filter-btn" onclick="filterSermons(this, 'family')">Family</button>
+      <button class="filter-btn" onclick="filterSermons(this, 'purpose')">Purpose</button>
+      <button class="filter-btn" onclick="filterSermons(this, 'healing')">Healing</button>
+      <button class="filter-btn" onclick="filterSermons(this, 'prayer')">Prayer</button>
+    </div>
+    <div class="sermon-grid">
+      <div class="sermon-card">
+        <div class="sermon-thumbnail" style="background:linear-gradient(135deg,#1B2D45,#0D1B2A);">
+          <div class="sermon-thumbnail-icon">🕊️</div>
+          <div class="sermon-play-btn"><div class="play-circle">▶</div></div>
+          <div class="sermon-duration">48:22</div>
+        </div>
+        <div class="sermon-body">
+          <div class="sermon-topic">Faith</div>
+          <div class="sermon-title">When God Seems Silent</div>
+          <div class="sermon-meta">
+            <div class="sermon-meta-left">
+              <div class="speaker-avatar">DM</div>
+              <span>Pastor David Mwangi</span>
+            </div>
+            <span>Mar 24, 2025</span>
+          </div>
+          <div class="sermon-downloads">
+            <a href="#" class="download-pill" onclick="showToast('🎵 Audio downloading...'); return false;">🎧 Audio</a>
+            <a href="#" class="download-pill" onclick="showToast('📄 Notes downloading...'); return false;">📄 Notes</a>
+          </div>
+        </div>
+      </div>
+      <div class="sermon-card">
+        <div class="sermon-thumbnail" style="background:linear-gradient(135deg,#1A3A2A,#0D2A1A);">
+          <div class="sermon-thumbnail-icon">🌱</div>
+          <div class="sermon-play-btn"><div class="play-circle">▶</div></div>
+          <div class="sermon-duration">52:14</div>
+        </div>
+        <div class="sermon-body">
+          <div class="sermon-topic">Purpose</div>
+          <div class="sermon-title">Your Life Has a Blueprint</div>
+          <div class="sermon-meta">
+            <div class="sermon-meta-left">
+              <div class="speaker-avatar">RK</div>
+              <span>Rev. Ruth Kamau</span>
+            </div>
+            <span>Mar 17, 2025</span>
+          </div>
+          <div class="sermon-downloads">
+            <a href="#" class="download-pill" onclick="showToast('🎵 Audio downloading...'); return false;">🎧 Audio</a>
+            <a href="#" class="download-pill" onclick="showToast('📄 Notes downloading...'); return false;">📄 Notes</a>
+          </div>
+        </div>
+      </div>
+      <div class="sermon-card">
+        <div class="sermon-thumbnail" style="background:linear-gradient(135deg,#3A1B2A,#2A0D1A);">
+          <div class="sermon-thumbnail-icon">❤️</div>
+          <div class="sermon-play-btn"><div class="play-circle">▶</div></div>
+          <div class="sermon-duration">39:55</div>
+        </div>
+        <div class="sermon-body">
+          <div class="sermon-topic">Family</div>
+          <div class="sermon-title">Building a House of Prayer</div>
+          <div class="sermon-meta">
+            <div class="sermon-meta-left">
+              <div class="speaker-avatar">JO</div>
+              <span>Deacon James Oduya</span>
+            </div>
+            <span>Mar 10, 2025</span>
+          </div>
+          <div class="sermon-downloads">
+            <a href="#" class="download-pill" onclick="showToast('🎵 Audio downloading...'); return false;">🎧 Audio</a>
+            <a href="#" class="download-pill" onclick="showToast('📄 Notes downloading...'); return false;">📄 Notes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="#" class="btn btn-outline" style="border-color:var(--navy);color:var(--navy);" onclick="showToast('📚 Loading full sermon archive...'); return false;">View All Sermons</a>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="section events-section" id="events">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Events</div>
+      <h2 class="section-title">What's Happening</h2>
+      <p class="section-subtitle">From youth retreats to outreach missions, there's always something to be part of at Grace Covenant.</p>
+    </div>
+    <div class="events-layout">
+      <div class="calendar-widget reveal">
+        <div class="cal-header">
+          <div class="cal-title" id="calTitle">March 2025</div>
+          <div class="cal-nav">
+            <button class="cal-nav-btn" onclick="changeMonth(-1)">‹</button>
+            <button class="cal-nav-btn" onclick="changeMonth(1)">›</button>
+          </div>
+        </div>
+        <div class="cal-days-header">
+          <div class="cal-day-label">Su</div>
+          <div class="cal-day-label">Mo</div>
+          <div class="cal-day-label">Tu</div>
+          <div class="cal-day-label">We</div>
+          <div class="cal-day-label">Th</div>
+          <div class="cal-day-label">Fr</div>
+          <div class="cal-day-label">Sa</div>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+      </div>
+      <div class="reveal">
+        <div class="event-filters">
+          <button class="event-filter-btn active" onclick="this.parentElement.querySelectorAll('.event-filter-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">All</button>
+          <button class="event-filter-btn" onclick="this.parentElement.querySelectorAll('.event-filter-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">Youth</button>
+          <button class="event-filter-btn" onclick="this.parentElement.querySelectorAll('.event-filter-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">Outreach</button>
+          <button class="event-filter-btn" onclick="this.parentElement.querySelectorAll('.event-filter-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">Worship</button>
+        </div>
+        <div class="event-list">
+          <div class="event-item" onclick="showModal('rsvp')">
+            <div class="event-date-box">
+              <span class="event-date-day">04</span>
+              <span class="event-date-month">Apr</span>
+            </div>
+            <div class="event-info">
+              <h4>Youth Retreat 2025</h4>
+              <p>Camp Omega · 2 days · 150+ teens</p>
+              <span class="event-tag tag-youth">Youth</span>
+            </div>
+          </div>
+          <div class="event-item" onclick="showModal('rsvp')">
+            <div class="event-date-box">
+              <span class="event-date-day">12</span>
+              <span class="event-date-month">Apr</span>
+            </div>
+            <div class="event-info">
+              <h4>Easter Sunrise Service</h4>
+              <p>Main Sanctuary · 6:00 AM</p>
+              <span class="event-tag tag-worship">Worship</span>
+            </div>
+          </div>
+          <div class="event-item" onclick="showModal('rsvp')">
+            <div class="event-date-box">
+              <span class="event-date-day">19</span>
+              <span class="event-date-month">Apr</span>
+            </div>
+            <div class="event-info">
+              <h4>Community Outreach Day</h4>
+              <p>Likoni Slums · Volunteers needed</p>
+              <span class="event-tag tag-outreach">Outreach</span>
+            </div>
+          </div>
+          <div class="event-item" onclick="showModal('rsvp')">
+            <div class="event-date-box">
+              <span class="event-date-day">26</span>
+              <span class="event-date-month">Apr</span>
+            </div>
+            <div class="event-info">
+              <h4>Men's Bible Study Kickoff</h4>
+              <p>Conference Room B · Every Saturday</p>
+              <span class="event-tag tag-study">Bible Study</span>
+            </div>
+          </div>
+          <div class="event-item" onclick="showModal('rsvp')">
+            <div class="event-date-box">
+              <span class="event-date-day">10</span>
+              <span class="event-date-month">May</span>
+            </div>
+            <div class="event-info">
+              <h4>Women's Conference 2025</h4>
+              <p>Mombasa Serena Hotel · 2 days</p>
+              <span class="event-tag tag-special">Special</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MINISTRIES -->
+<section class="section ministries-section" id="ministries">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Ministries</div>
+      <h2 class="section-title">Find Your Place<br>to Serve</h2>
+      <p class="section-subtitle">Every ministry is a team of passionate people serving with purpose. Find yours.</p>
+    </div>
+    <div class="ministry-grid reveal">
+      <div class="ministry-card">
+        <div class="ministry-bg">👶</div>
+        <div class="ministry-overlay">
+          <div class="ministry-icon">👶</div>
+          <div class="ministry-name">Children's Ministry</div>
+          <div class="ministry-desc">Nurturing the next generation with age-appropriate teaching, fun activities, and biblical foundations.</div>
+          <div class="ministry-members">👥 120 children · 24 volunteers</div>
+        </div>
+        <div class="ministry-join" onclick="showToast('📝 Opening volunteer sign-up...'); event.stopPropagation();">Join →</div>
+      </div>
+      <div class="ministry-card">
+        <div class="ministry-bg" style="color:#63B3ED;">🔥</div>
+        <div class="ministry-overlay" style="background:linear-gradient(to top,rgba(27,45,69,0.95) 0%,transparent 100%);">
+          <div class="ministry-icon">🔥</div>
+          <div class="ministry-name">Youth Ministry</div>
+          <div class="ministry-desc">A dynamic space for teens and young adults to encounter God, build identity, and find community.</div>
+          <div class="ministry-members">👥 380 youth · 40 leaders</div>
+        </div>
+        <div class="ministry-join" onclick="showToast('📝 Opening volunteer sign-up...'); event.stopPropagation();">Join →</div>
+      </div>
+      <div class="ministry-card">
+        <div class="ministry-bg">🎵</div>
+        <div class="ministry-overlay">
+          <div class="ministry-icon">🎵</div>
+          <div class="ministry-name">Worship & Music</div>
+          <div class="ministry-desc">Leading the congregation into authentic, spirit-filled worship through music, song, and arts.</div>
+          <div class="ministry-members">👥 80 members · 3 bands</div>
+        </div>
+        <div class="ministry-join" onclick="showToast('📝 Opening volunteer sign-up...'); event.stopPropagation();">Join →</div>
+      </div>
+      <div class="ministry-card">
+        <div class="ministry-bg">🌍</div>
+        <div class="ministry-overlay">
+          <div class="ministry-icon">🌍</div>
+          <div class="ministry-name">Outreach & Missions</div>
+          <div class="ministry-desc">Serving the least, the lost, and the lonely both locally and across the globe.</div>
+          <div class="ministry-members">👥 200+ volunteers · 8 countries</div>
+        </div>
+        <div class="ministry-join" onclick="showToast('📝 Opening volunteer sign-up...'); event.stopPropagation();">Join →</div>
+      </div>
+      <div class="ministry-card">
+        <div class="ministry-bg">💑</div>
+        <div class="ministry-overlay">
+          <div class="ministry-icon">💑</div>
+          <div class="ministry-name">Marriage & Family</div>
+          <div class="ministry-desc">Strengthening marriages, supporting families, and building healthy homes for God's glory.</div>
+          <div class="ministry-members">👥 160 couples enrolled</div>
+        </div>
+        <div class="ministry-join" onclick="showToast('📝 Opening volunteer sign-up...'); event.stopPropagation();">Join →</div>
+      </div>
+      <div class="ministry-card">
+        <div class="ministry-bg">📖</div>
+        <div class="ministry-overlay">
+          <div class="ministry-icon">📖</div>
+          <div class="ministry-name">Bible Study</div>
+          <div class="ministry-desc">Deep, transformative study of God's Word in community — small groups, classes, and online.</div>
+          <div class="ministry-members">👥 340 students · 22 groups</div>
+        </div>
+        <div class="ministry-join" onclick="showToast('📝 Opening volunteer sign-up...'); event.stopPropagation();">Join →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONATIONS -->
+<section class="donations-section" id="donate">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Giving & Tithes</div>
+      <h2 class="section-title">Partner With<br>Our Mission</h2>
+      <p class="section-subtitle">Your generosity fuels life change. Every shilling given plants seeds of hope in our community and beyond.</p>
+    </div>
+    <div class="donations-layout">
+      <div class="donation-form-wrapper reveal">
+        <div class="donation-form-title">Make a Donation</div>
+        <div class="amount-grid">
+          <button class="amount-btn" onclick="selectAmount(this, 500)">KES 500</button>
+          <button class="amount-btn selected" onclick="selectAmount(this, 1000)">KES 1,000</button>
+          <button class="amount-btn" onclick="selectAmount(this, 2500)">KES 2,500</button>
+          <button class="amount-btn" onclick="selectAmount(this, 5000)">KES 5,000</button>
+          <button class="amount-btn" onclick="selectAmount(this, 10000)">KES 10,000</button>
+          <button class="amount-btn" onclick="selectAmount(this, 'custom')">Custom</button>
+        </div>
+        <div class="donation-input-group" id="customAmountGroup" style="display:none;">
+          <label>Custom Amount (KES)</label>
+          <input type="number" class="donation-input" placeholder="Enter amount">
+        </div>
+        <div class="donation-input-group">
+          <label>Giving Category</label>
+          <select class="donation-input" style="background:rgba(255,255,255,0.06);">
+            <option style="background:#1B2D45;">General Tithe</option>
+            <option style="background:#1B2D45;">Building Fund</option>
+            <option style="background:#1B2D45;">Outreach & Missions</option>
+            <option style="background:#1B2D45;">Youth Ministry</option>
+            <option style="background:#1B2D45;">Pastor's Discretion</option>
+          </select>
+        </div>
+        <div class="recurring-toggle">
+          <button class="toggle-switch on" id="recurringToggle" onclick="this.classList.toggle('on')"></button>
+          <span class="toggle-label">Set as recurring monthly donation</span>
+        </div>
+        <div class="payment-methods">
+          <div class="payment-method selected" onclick="selectPayment(this)">📱 M-Pesa</div>
+          <div class="payment-method" onclick="selectPayment(this)">💳 Stripe</div>
+          <div class="payment-method" onclick="selectPayment(this)">🅿️ PayPal</div>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;" onclick="showToast('💛 Thank you! Processing your gift...')">
+          Give Now — KES 1,000
+        </button>
+        <p style="text-align:center;font-size:0.75rem;color:rgba(255,255,255,0.3);margin-top:12px;">🔒 Secure, encrypted payment. Your data is protected.</p>
+      </div>
+      <div class="impact-tracker reveal">
+        <div class="impact-title">Where Your Gift Goes</div>
+        <div class="impact-item">
+          <div class="impact-header">
+            <span class="impact-name">🙏 Ministry & Programs</span>
+            <span class="impact-pct">40%</span>
+          </div>
+          <div class="impact-bar-track"><div class="impact-bar-fill" data-width="40%"></div></div>
+          <div class="impact-goal">KES 2.4M raised of KES 6M goal</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-header">
+            <span class="impact-name">🏗️ Building & Infrastructure</span>
+            <span class="impact-pct">25%</span>
+          </div>
+          <div class="impact-bar-track"><div class="impact-bar-fill" data-width="25%"></div></div>
+          <div class="impact-goal">KES 1.5M raised of KES 6M goal</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-header">
+            <span class="impact-name">🌍 Outreach & Missions</span>
+            <span class="impact-pct">20%</span>
+          </div>
+          <div class="impact-bar-track"><div class="impact-bar-fill" data-width="20%"></div></div>
+          <div class="impact-goal">KES 1.2M raised of KES 6M goal</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-header">
+            <span class="impact-name">🎓 Youth & Education</span>
+            <span class="impact-pct">15%</span>
+          </div>
+          <div class="impact-bar-track"><div class="impact-bar-fill" data-width="15%"></div></div>
+          <div class="impact-goal">KES 900K raised of KES 6M goal</div>
+        </div>
+        <div class="total-raised">
+          <span class="total-num">KES 6.84M</span>
+          <div class="total-label">Total Raised This Year · 1,248 donors</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Member Stories</div>
+      <h2 class="section-title">Transformed Lives</h2>
+    </div>
+  </div>
+  <div class="testimonials-track" id="testimonialsTrack">
+    <!-- set 1 -->
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-quote">Grace Covenant is where I found my faith again after years of drifting. The community here loved me back to life.</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">AN</div>
+        <div><div class="author-name">Aisha Njoroge</div><div class="author-role">Member since 2019</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-quote">The youth ministry completely transformed my son. He came in lost and now he's leading a small group. God is faithful!</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">PO</div>
+        <div><div class="author-name">Peter Otieno</div><div class="author-role">Member since 2016</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-quote">I attended online first during lockdown. The sermons spoke to my marriage crisis and we're still together — stronger than ever.</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">SM</div>
+        <div><div class="author-name">Sophia Mwenda</div><div class="author-role">Online Member</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-quote">Being part of the outreach team gave me purpose beyond a salary. I've never felt so alive. This church changed my life.</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">BK</div>
+        <div><div class="author-name">Brian Kipkoech</div><div class="author-role">Outreach Volunteer</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-quote">Pastor David's teaching is rich, practical, and deeply rooted in scripture. Every Sunday I leave with something to apply.</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">LW</div>
+        <div><div class="author-name">Lucy Wambui</div><div class="author-role">Member since 2021</div></div>
+      </div>
+    </div>
+    <!-- set 2 (duplicate for infinite scroll) -->
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-quote">Grace Covenant is where I found my faith again after years of drifting. The community here loved me back to life.</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">AN</div>
+        <div><div class="author-name">Aisha Njoroge</div><div class="author-role">Member since 2019</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-quote">The youth ministry completely transformed my son. He came in lost and now he's leading a small group. God is faithful!</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">PO</div>
+        <div><div class="author-name">Peter Otieno</div><div class="author-role">Member since 2016</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-quote">I attended online first during lockdown. The sermons spoke to my marriage crisis and we're still together — stronger than ever.</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">SM</div>
+        <div><div class="author-name">Sophia Mwenda</div><div class="author-role">Online Member</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-quote">Being part of the outreach team gave me purpose beyond a salary. I've never felt so alive. This church changed my life.</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">BK</div>
+        <div><div class="author-name">Brian Kipkoech</div><div class="author-role">Outreach Volunteer</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-quote">Pastor David's teaching is rich, practical, and deeply rooted in scripture. Every Sunday I leave with something to apply.</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">LW</div>
+        <div><div class="author-name">Lucy Wambui</div><div class="author-role">Member since 2021</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="section leadership-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Our Team</div>
+      <h2 class="section-title">Shepherds of the Flock</h2>
+      <p class="section-subtitle">Our leadership team is committed to serving with humility, wisdom, and a deep love for God's people.</p>
+    </div>
+    <div class="leaders-grid reveal">
+      <div class="leader-card">
+        <div class="leader-img">
+          <div class="leader-initials">DM</div>
+          <div class="leader-hover-info">
+            <div class="leader-bio">"I exist to help people encounter a God who is more real than their problems."</div>
+          </div>
+        </div>
+        <div class="leader-body">
+          <div class="leader-name">Pastor David Mwangi</div>
+          <div class="leader-role">Senior Pastor</div>
+          <div class="leader-social">
+            <a href="#" class="social-btn" onclick="showToast('🔗 Opening Twitter...'); return false;">𝕏</a>
+            <a href="#" class="social-btn" onclick="showToast('🔗 Opening email...'); return false;">✉</a>
+          </div>
+        </div>
+      </div>
+      <div class="leader-card">
+        <div class="leader-img">
+          <div class="leader-initials">RK</div>
+          <div class="leader-hover-info">
+            <div class="leader-bio">"Women need to know they are powerful vessels of God's kingdom."</div>
+          </div>
+        </div>
+        <div class="leader-body">
+          <div class="leader-name">Rev. Ruth Kamau</div>
+          <div class="leader-role">Associate Pastor</div>
+          <div class="leader-social">
+            <a href="#" class="social-btn" onclick="showToast('🔗 Opening Twitter...'); return false;">𝕏</a>
+            <a href="#" class="social-btn" onclick="showToast('🔗 Opening email...'); return false;">✉</a>
+          </div>
+        </div>
+      </div>
+      <div class="leader-card">
+        <div class="leader-img">
+          <div class="leader-initials">JO</div>
+          <div class="leader-hover-info">
+            <div class="leader-bio">"Serving the community is an act of worship. Every person deserves dignity."</div>
+          </div>
+        </div>
+        <div class="leader-body">
+          <div class="leader-name">Deacon James Oduya</div>
+          <div class="leader-role">Head of Outreach</div>
+          <div class="leader-social">
+            <a href="#" class="social-btn" onclick="showToast('🔗 Opening Twitter...'); return false;">𝕏</a>
+            <a href="#" class="social-btn" onclick="showToast('🔗 Opening email...'); return false;">✉</a>
+          </div>
+        </div>
+      </div>
+      <div class="leader-card">
+        <div class="leader-img">
+          <div class="leader-initials">FN</div>
+          <div class="leader-hover-info">
+            <div class="leader-bio">"The next generation will be more bold for God than we ever were."</div>
+          </div>
+        </div>
+        <div class="leader-body">
+          <div class="leader-name">Faith Njeri</div>
+          <div class="leader-role">Youth Director</div>
+          <div class="leader-social">
+            <a href="#" class="social-btn" onclick="showToast('🔗 Opening Twitter...'); return false;">𝕏</a>
+            <a href="#" class="social-btn" onclick="showToast('🔗 Opening email...'); return false;">✉</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="section blog-section" id="blog">
+  <div class="section-inner">
+    <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:0;">
+      <div>
+        <div class="section-label">Blog & Devotionals</div>
+        <h2 class="section-title">Words for the Journey</h2>
+      </div>
+      <a href="#" class="btn btn-outline" style="border-color:var(--navy);color:var(--navy);" onclick="showToast('📰 Loading all articles...'); return false;">All Articles</a>
+    </div>
+    <div class="blog-grid reveal">
+      <div class="blog-card">
+        <div class="blog-img">✝️</div>
+        <div class="blog-body">
+          <div class="blog-category">Devotional</div>
+          <div class="blog-title">5 Ways to Keep Your Faith Alive When Life Gets Hard</div>
+          <div class="blog-excerpt">Faith is not the absence of difficulty — it is the courage to keep trusting God in the middle of it. Here are five practical anchors to hold on to when the storms of life press in...</div>
+          <div class="blog-meta">
+            <div class="blog-meta-left">
+              <div class="speaker-avatar">DM</div>
+              <span>Pastor David · 8 min read</span>
+            </div>
+            <a href="#" class="read-more" onclick="showToast('📖 Opening article...'); return false;">Read →</a>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img">🌱</div>
+        <div class="blog-body">
+          <div class="blog-category">Church News</div>
+          <div class="blog-title">Our Outreach Team Just Drilled a Well in Kilifi</div>
+          <div class="blog-excerpt">Thanks to your generosity, clean water is now flowing in Kilifi village for the first time...</div>
+          <div class="blog-meta">
+            <div class="blog-meta-left">
+              <div class="speaker-avatar">JO</div>
+              <span>Deacon James · 4 min</span>
+            </div>
+            <a href="#" class="read-more" onclick="showToast('📖 Opening article...'); return false;">Read →</a>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img">🙏</div>
+        <div class="blog-body">
+          <div class="blog-category">Prayer</div>
+          <div class="blog-title">A 7-Day Prayer Guide for Your Family</div>
+          <div class="blog-excerpt">Download our free prayer calendar and pray intentionally for your household this month...</div>
+          <div class="blog-meta">
+            <div class="blog-meta-left">
+              <div class="speaker-avatar">RK</div>
+              <span>Rev. Ruth · 3 min</span>
+            </div>
+            <a href="#" class="read-more" onclick="showToast('📖 Opening article...'); return false;">Read →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Contact Us</div>
+      <h2 class="section-title" style="color:var(--white);">Get in Touch</h2>
+    </div>
+    <div class="contact-layout">
+      <div class="reveal">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail">
+            <h4>Visit Us</h4>
+            <p>Grace Covenant Church<br>Mama Ngina Drive, Mombasa<br>P.O. Box 14520 – 80100</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-detail">
+            <h4>Call Us</h4>
+            <p>+254 712 345 678<br>Mon – Fri, 8:00 AM – 5:00 PM</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-detail">
+            <h4>Email Us</h4>
+            <p>hello@gracecovenantchurch.ke<br>Typical reply within 24 hours</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">⏰</div>
+          <div class="contact-detail">
+            <h4>Service Times</h4>
+            <p>Sunday: 8:00 AM & 10:30 AM<br>Wednesday: 6:30 PM (Midweek)</p>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Facebook">📘</a>
+          <a href="#" class="social-link" title="YouTube">▶️</a>
+          <a href="#" class="social-link" title="Instagram">📸</a>
+          <a href="#" class="social-link" title="Twitter/X">𝕏</a>
+          <a href="#" class="social-link" title="WhatsApp">💬</a>
+        </div>
+        <div class="map-placeholder">
+          <div class="map-pin">
+            <div class="map-pin-icon">📍</div>
+            <div class="map-pin-text">Mama Ngina Drive, Mombasa</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-input" placeholder="John">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-input" placeholder="Doe">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-input" placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" class="form-input" placeholder="+254 7XX XXX XXX">
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <select class="form-input" style="background:rgba(255,255,255,0.05);">
+            <option style="background:#1B2D45;">General Inquiry</option>
+            <option style="background:#1B2D45;">Prayer Request</option>
+            <option style="background:#1B2D45;">Volunteer Interest</option>
+            <option style="background:#1B2D45;">Membership Information</option>
+            <option style="background:#1B2D45;">Counseling Request</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea class="form-input" placeholder="How can we serve you?"></textarea>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="showToast('✉️ Message sent! We\'ll respond within 24 hours.')">
+          Send Message
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter-section">
+  <div class="newsletter-inner">
+    <div class="newsletter-text">
+      <h2>Stay Connected</h2>
+      <p>Get weekly sermons, devotionals, and event updates straight to your inbox.</p>
+    </div>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="Enter your email address">
+      <button class="btn-dark" onclick="showToast('🎉 Subscribed! Welcome to the family.')">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <svg viewBox="0 0 36 36" fill="none" style="width:32px;height:32px;">
+          <rect x="15" y="4" width="6" height="28" rx="2" fill="#C9A84C"/>
+          <rect x="6" y="11" width="24" height="6" rx="2" fill="#C9A84C"/>
+        </svg>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:white;">Grace Covenant</div>
+      </div>
+      <div class="footer-tagline">A community of faith, hope, and love. You belong here — come as you are.</div>
+      <div style="margin-top:20px;font-size:0.78rem;color:rgba(255,255,255,0.25);">
+        📍 Mama Ngina Drive, Mombasa, Kenya
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#sermons">Sermons</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#ministries">Ministries</a></li>
+        <li><a href="#donate">Give Online</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Resources</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="showToast('📖 Opening Bible study...'); return false;">Bible Study</a></li>
+        <li><a href="#" onclick="showToast('🙏 Opening prayer...'); return false;">Prayer Requests</a></li>
+        <li><a href="#blog">Devotionals</a></li>
+        <li><a href="#" onclick="showToast('📻 Opening podcast...'); return false;">Podcast</a></li>
+        <li><a href="#" onclick="showToast('👤 Opening portal...'); return false;">Member Portal</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Get Involved</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="showToast('🤝 Loading volunteer page...'); return false;">Volunteer</a></li>
+        <li><a href="#" onclick="showToast('📋 Loading small groups...'); return false;">Small Groups</a></li>
+        <li><a href="#ministries">Join a Ministry</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#" onclick="showToast('📝 Loading membership form...'); return false;">Membership</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Grace Covenant Church. All rights reserved.</span>
+    <span>
+      <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Use</a>
+    </span>
+  </div>
+</footer>
+
+<!-- RSVP MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title">RSVP for Event</div>
+    <p style="color:rgba(255,255,255,0.5);font-size:0.88rem;margin-bottom:24px;">Reserve your spot. We'd love to see you there!</p>
+    <div class="form-group">
+      <label style="color:rgba(255,255,255,0.5);font-size:0.8rem;display:block;margin-bottom:8px;">Full Name</label>
+      <input type="text" class="form-input" placeholder="Your name">
+    </div>
+    <div class="form-group">
+      <label style="color:rgba(255,255,255,0.5);font-size:0.8rem;display:block;margin-bottom:8px;">Phone / WhatsApp</label>
+      <input type="tel" class="form-input" placeholder="+254 7XX XXX XXX">
+    </div>
+    <div class="form-group">
+      <label style="color:rgba(255,255,255,0.5);font-size:0.8rem;display:block;margin-bottom:8px;">Number of Attendees</label>
+      <input type="number" class="form-input" value="1" min="1">
+    </div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;" onclick="showToast('🎉 RSVP confirmed! See you there!'); closeModal()">
+      Confirm RSVP
+    </button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ===== PARTICLES =====
+const particlesEl = document.getElementById('particles');
+for (let i = 0; i < 25; i++) {
+  const p = document.createElement('div');
+  p.classList.add('particle');
+  p.style.left = Math.random() * 100 + '%';
+  p.style.width = p.style.height = (Math.random() * 3 + 1) + 'px';
+  const dur = Math.random() * 12 + 8;
+  const delay = Math.random() * -20;
+  p.style.animationDuration = dur + 's';
+  p.style.animationDelay = delay + 's';
+  p.style.opacity = Math.random() * 0.6;
+  particlesEl.appendChild(p);
+}
+
+// ===== COUNTDOWN =====
+function updateCountdown() {
+  const target = new Date();
+  target.setDate(target.getDate() + 4);
+  target.setHours(target.getHours() + 14, target.getMinutes() + 38, 0, 0);
+  const now = new Date();
+  const diff = target - now;
+  if (diff < 0) return;
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  const el = (id, val) => { const e = document.getElementById(id); if(e) e.textContent = String(val).padStart(2,'0'); };
+  el('cd-days',d); el('cd-hours',h); el('cd-mins',m); el('cd-secs',s);
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// ===== CALENDAR =====
+let calDate = new Date(2025, 2, 1); // March 2025
+const eventDays = [5, 12, 19, 24, 26];
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+function renderCalendar() {
+  const grid = document.getElementById('calGrid');
+  const title = document.getElementById('calTitle');
+  if (!grid) return;
+  grid.innerHTML = '';
+  title.textContent = months[calDate.getMonth()] + ' ' + calDate.getFullYear();
+  const first = new Date(calDate.getFullYear(), calDate.getMonth(), 1).getDay();
+  const days = new Date(calDate.getFullYear(), calDate.getMonth() + 1, 0).getDate();
+  const today = new Date();
+  // prev month padding
+  const prevDays = new Date(calDate.getFullYear(), calDate.getMonth(), 0).getDate();
+  for (let i = first - 1; i >= 0; i--) {
+    const cell = document.createElement('div');
+    cell.className = 'cal-cell other-month';
+    cell.textContent = prevDays - i;
+    grid.appendChild(cell);
+  }
+  for (let d = 1; d <= days; d++) {
+    const cell = document.createElement('div');
+    cell.className = 'cal-cell';
+    const isToday = d === today.getDate() && calDate.getMonth() === today.getMonth() && calDate.getFullYear() === today.getFullYear();
+    if (isToday) cell.classList.add('today');
+    if (eventDays.includes(d)) cell.classList.add('has-event');
+    cell.textContent = d;
+    cell.onclick = () => { if(eventDays.includes(d)) showToast('📅 Events on ' + months[calDate.getMonth()] + ' ' + d + '. Click event cards to RSVP!'); };
+    grid.appendChild(cell);
+  }
+}
+function changeMonth(dir) {
+  calDate.setMonth(calDate.getMonth() + dir);
+  renderCalendar();
+}
+renderCalendar();
+
+// ===== REVEAL ON SCROLL =====
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+revealEls.forEach(el => observer.observe(el));
+
+// ===== IMPACT BARS =====
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.impact-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width;
+      });
+    }
+  });
+}, { threshold: 0.3 });
+const donationsSection = document.querySelector('.donations-section');
+if (donationsSection) barObserver.observe(donationsSection);
+
+// ===== TOAST =====
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.innerHTML = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3200);
+}
+
+// ===== MODAL =====
+function showModal(type) {
+  document.getElementById('modalOverlay').classList.add('open');
+}
+function closeModal(e) {
+  if (!e || e.target === document.getElementById('modalOverlay')) {
+    document.getElementById('modalOverlay').classList.remove('open');
+  }
+}
+
+// ===== SERMON FILTERS =====
+function filterSermons(btn, category) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  showToast('🔍 Filtering: ' + (category === 'all' ? 'All Sermons' : category));
+}
+
+// ===== DONATION =====
+function selectAmount(btn, amount) {
+  document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  const custom = document.getElementById('customAmountGroup');
+  if (amount === 'custom') {
+    custom.style.display = 'block';
+  } else {
+    custom.style.display = 'none';
+    document.querySelector('.btn-primary[onclick*="Give Now"]').textContent = 'Give Now — KES ' + amount.toLocaleString();
+  }
+}
+function selectPayment(el) {
+  document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+// ===== NAV SCROLL EFFECT =====
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('mainNav');
+  if (window.scrollY > 40) {
+    nav.style.boxShadow = '0 4px 32px rgba(0,0,0,0.3)';
+  } else {
+    nav.style.boxShadow = 'none';
+  }
+});
+
+// ===== HAMBURGER MENU =====
+document.getElementById('hamburger').onclick = function() {
+  showToast('📱 Mobile menu coming soon — use the navigation links!');
+};
+</script>
+
+</body>
+</html>
